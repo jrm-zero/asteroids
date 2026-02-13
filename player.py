@@ -40,14 +40,12 @@ class Player(CircleShape):
 
         if keys[pygame.K_SPACE]:
             if self.shot_cooldown > 0:
-                print(f"holding shot because cooldown is at {self.shot_cooldown}")
+                pass
             else:
                 self.shoot()
                 self.shot_cooldown = PLAYER_SHOOT_COOLDOWN_SECONDS
-                print(f"clock at {self.shot_cooldown}")
 
         self.shot_cooldown -= dt
-        print(f"{self.shot_cooldown} on the clock")
 
     def move(self, dt):
         unit_vector = pygame.Vector2(0, 1)
